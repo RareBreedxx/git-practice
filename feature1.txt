@@ -1,3 +1,4 @@
 Feature 1 content
 Feature 2 conflicting change
 Main branch change for conflict
+Feature2 branch conflicting change
