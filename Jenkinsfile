@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/RareBreedxx/git-practice.git'
+                git branch: 'main', 
+                    url: 'https://github.com/RareBreedxx/git-practice.git',
+                    credentialsId: '751fe-21e2-4220-aff6-09da51de16ed'
             }
         }
         stage('Build') {
@@ -24,3 +26,4 @@ pipeline {
         }
     }
 }
+
