@@ -10,10 +10,14 @@ pipeline {
 
         stage('Run System Check') {
             steps {
-                // Make script executable
                 sh 'chmod +x system_check.sh'
-                // Run the script
                 sh './system_check.sh'
+            }
+        }
+
+        stage('Archive Logs') {
+            steps {
+                archiveArtifacts artifacts: 'system_check.log', fingerprint: true
             }
         }
     }
