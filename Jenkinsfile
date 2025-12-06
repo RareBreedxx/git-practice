@@ -4,24 +4,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', 
-                    url: 'https://github.com/RareBreedxx/git-practice.git',
-                    credentialsId: '751fe-21e2-4220-aff6-09da51de16ed'
+                git branch: 'main', url: 'https://github.com/RareBreedxx/git-practice-demo.git'
             }
         }
-        stage('Build') {
+
+        stage('Run System Check') {
             steps {
-                echo 'Building the project...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
+                // Make script executable
+                sh 'chmod +x system_check.sh'
+                // Run the script
+                sh './system_check.sh'
             }
         }
     }
