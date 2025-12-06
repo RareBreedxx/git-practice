@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/RareBreedxx/git-practice-demo.git'
+                git branch: 'main', url: 'https://github.com/RareBreedxx/git-practice.git'
             }
         }
         stage('Build') {
