@@ -20,6 +20,26 @@ pipeline {
                 archiveArtifacts artifacts: 'system_check.log', fingerprint: true
             }
         }
+	stage('Build Docker Image') {
+    steps {
+        sh '''
+        docker build -t my-first-image ./docker-app
+        '''
     }
 }
 
+	stage('Build Docker Image') {
+    steps {
+        sh '''
+        docker build -t my-first-image ./docker-app
+        '''
+    }
+}
+	stage('Build Docker Image') {
+    steps {
+        sh '''
+        docker build -t my-first-image ./docker-app
+        '''
+		}
+	}
+}
