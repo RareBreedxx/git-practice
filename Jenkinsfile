@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/RareBreedxx/git-practice.git', branch: 'main'
+                git url: 'https://github.com/RareBreedxx/git-practice'
             }
         }
 
@@ -17,8 +17,10 @@ pipeline {
 
         stage('Archive Logs') {
             steps {
-                archiveArtifacts artifacts: 'system_check.log', fingerprint: true
+                archiveArtifacts artifacts: 'system_check.log', allowEmptyArchive: true
             }
         }
 
-     
+        stage('Build Docker Image') {
+            steps
+
