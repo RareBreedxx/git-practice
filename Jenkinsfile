@@ -21,13 +21,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                sh '''
-                docker build -t my-first-image ./docker-app
-                '''
-            }
-        }
-    }
+      }
+   }
 }
 
